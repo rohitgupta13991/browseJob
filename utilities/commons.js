@@ -49,26 +49,38 @@ exports.verifyJobDetail = function (i) {
     //click job tiitle
     browsePage.job.jobList.get(i).click();
 
-    //verify job page headings
+    //verify job page headings and some details
     expect(browsePage.job.jobHeading.getText()).toBeDefined();
     expect(browsePage.job.jobLocationDetail.getText()).toBeDefined();
     expect(browsePage.job.jobDescription.getText()).toBeDefined();
     expect(browsePage.job.jobSkills.getText()).toBeDefined();
     expect(browsePage.job.jobOppor.getText()).toBeDefined();
     expect(browsePage.job.jobApply.getText()).toBeDefined();
+    expect(browsePage.job.jobDescriptionDetail.getText()).toBeDefined();
+    expect(browsePage.job.jobSkillsDetail.getText()).toBeDefined();
+    expect(browsePage.job.jobOpporDetail.getText()).toBeDefined();
+
+    //click Apply now button on job detail page
     browsePage.job.jobApply.click();
 
     //wait for form to open
     browser.wait(EC.visibilityOf(browsePage.job.applicantName), 5000);
 
+    //required field validation check - click apply now without any inputs
+    browsePage.job.applyNow.click();
+    browser.wait(EC.visibilityOf(browsePage.job.applicantNameRequired), 5000);
+    expect(browsePage.job.applicantNameRequired.getText()).toEqual("Name is required.");
+    expect(browsePage.job.applicantEmailRequired.getText()).toEqual("Email is required.");
+    expect(browsePage.job.applicantResumeRequired.getText()).toEqual("Resume is required.");
 
-    //positive case
+    //click apply now with valid inputs
     browsePage.job.applicantName.sendKeys("Rohit");
     browsePage.job.applicantEmail.sendKeys("rohit.gupta13991@gmail.com");
     var fileToUpload = '../resources/galytixResume.pdf',
         absolutePath = path.resolve(__dirname, fileToUpload);
 
     browsePage.job.applicantResume.sendKeys(absolutePath);
+    //Click apply now button in the form
     browsePage.job.applyNow.click();
     browser.wait(EC.visibilityOf(browsePage.job.applySuccess), 5000);
     //NOT ABLE TO APPLY JOB 5 FOR NOW, THEREFORE ADDED BELOW CHECK
