@@ -1,0 +1,10 @@
+{
+  "title": "GalytixTestExercise",
+  "heading": "BROWSE JOBS",
+  "subheading": "TECHNOLOGY",
+  "jobNames": ["Sr. Software Developer","Sr. Software Developer", "Testing Engineer", "Testing Engineer", "Sr. Web Designer","Sr. Web Designer"],
+  "jobLocations": ["Location: Gurgaon, India", "Location: London, UK","Location: Gurgaon, India","Location: London, UK","Location: London, UK","Location: Gurgaon, India"],
+  "jobDates": ["Date posted: 2020-07-20","Date posted: 2020-07-20","Date posted: 2020-07-20","Date posted: 2020-07-20","Date posted: 2020-07-20","Date posted: 2020-07-20"],
+  "jobSuccess": "Application submitted",
+  "jobFail": "There was an error submitting the application"
+}
