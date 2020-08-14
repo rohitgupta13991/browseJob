@@ -6,5 +6,11 @@
   "jobLocations": ["Location: Gurgaon, India", "Location: London, UK","Location: Gurgaon, India","Location: London, UK","Location: London, UK","Location: Gurgaon, India"],
   "jobDates": ["Date posted: 2020-07-20","Date posted: 2020-07-20","Date posted: 2020-07-20","Date posted: 2020-07-20","Date posted: 2020-07-20","Date posted: 2020-07-20"],
   "jobSuccess": "Application submitted",
-  "jobFail": "There was an error submitting the application"
+  "jobFail": "There was an error submitting the application",
+  "applicantName": "Rohit",
+  "applicantEmail": "rohit.gupta13991@gmail.com",
+  "applicantResume": "",
+  "nameRequired": "Name is required.",
+  "emailRequired": "Email is required.",
+  "resumeRequired": "Resume is required."
 }

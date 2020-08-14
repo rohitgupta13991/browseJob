@@ -69,14 +69,14 @@ exports.verifyJobDetail = function (i) {
     //required field validation check - click apply now without any inputs
     browsePage.job.applyNow.click();
     browser.wait(EC.visibilityOf(browsePage.job.applicantNameRequired), 5000);
-    expect(browsePage.job.applicantNameRequired.getText()).toEqual("Name is required.");
-    expect(browsePage.job.applicantEmailRequired.getText()).toEqual("Email is required.");
-    expect(browsePage.job.applicantResumeRequired.getText()).toEqual("Resume is required.");
+    expect(browsePage.job.applicantNameRequired.getText()).toEqual(text.nameRequired);
+    expect(browsePage.job.applicantEmailRequired.getText()).toEqual(text.emailRequired);
+    expect(browsePage.job.applicantResumeRequired.getText()).toEqual(text.resumeRequired);
 
     //click apply now with valid inputs
-    browsePage.job.applicantName.sendKeys("Rohit");
-    browsePage.job.applicantEmail.sendKeys("rohit.gupta13991@gmail.com");
-    var fileToUpload = '../resources/galytixResume.pdf',
+    browsePage.job.applicantName.sendKeys(text.applicantName);
+    browsePage.job.applicantEmail.sendKeys(text.applicantEmail);
+    var fileToUpload = text.applicantResume,
         absolutePath = path.resolve(__dirname, fileToUpload);
 
     browsePage.job.applicantResume.sendKeys(absolutePath);
